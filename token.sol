@@ -1,0 +1,192 @@
+// SPDX-License-Identifier: GPL-3.0
+//Tests do token para o desafio final.
+
+//CORRIGIDO E TESTADO EM 11/06 21:55  (L. Henrique)   = )
+
+pragma solidity >=0.7.0 <0.9.0;
+
+interface IERC20 {
+
+    // Functions
+    function TotalSupply() external view returns(uint256);
+    function balanceOf(address account) external view returns(uint256);
+    function transfer(address receiver, uint256 quantity) external returns(bool);  
+    function allowance(address tokenOwner, address spender) external view returns(uint256);
+    function approve(address delegate, uint256 numTokens) external returns(bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns(bool);
+
+   // function toMint(uint256 amount) external returns(bool);
+   // function toBurn(uint256 amount) external returns(bool);
+
+    // Events
+    event Transfer(address from, address to, uint256 value);
+    event Minted(address to, uint256 value);
+    event Burned(address from, uint256 value);
+    event Killed(address killedBy);
+    event Approval(address owner, address spender, uint256 value);
+
+}
+
+contract CryptoToken is IERC20 {
+
+    //  Libs
+    using Math for uint256;
+
+    // Enums
+    enum status { ACTIVE, PAUSED, CANCELLED }
+
+    //Properties
+    string public constant name = "CryptoToken";
+    string public constant symbol = "CRY";
+    uint8 public constant decimals = 18;  //Default dos exemplos é sempre 18
+    address private owner;
+    uint256 private totalsupply;
+    status contractState;
+
+    //Mapping
+    mapping(address => uint256) private addressToBalance;
+    mapping(address => mapping(address => uint)) public allowed;
+
+    // Modifiers
+    modifier isOwner() {
+        require(msg.sender == owner, "Sender is not owner!");
+        _;
+    }
+
+    modifier isActived() {
+        require(contractState == status.ACTIVE, "The contract is not acvite!");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+        totalsupply = 21000000; //Implementar decimais ( 8)
+        addressToBalance[msg.sender] = totalsupply;
+        contractState = status.ACTIVE;
+    }
+
+    //Public Functions
+    function TotalSupply() external override view returns(uint256) {
+        return totalsupply;
+    }
+
+
+    function balanceOf(address tokenOwner) public override view returns(uint256) {
+        return addressToBalance[tokenOwner];
+    }
+
+    function state() public view returns(status) {
+        return contractState;
+    }
+
+    function transfer(address receiver, uint256 quantity) external override isActived returns(bool) {
+        require(quantity <= addressToBalance[msg.sender], "Insufficient Balance to Transfer");
+        addressToBalance[msg.sender] = addressToBalance[msg.sender].sub(quantity);
+        addressToBalance[receiver] = addressToBalance[receiver].add(quantity);
+
+        emit Transfer(msg.sender, receiver, quantity);
+        return true;
+    }
+
+    function allowance(address tokenOwner, address spender) external override view returns (uint256){
+       return allowed[tokenOwner][spender];         
+    }
+
+    function approve(address delegate, uint256 numTokens) external override
+isActived  returns (bool) {
+        allowed[msg.sender][delegate] = numTokens;
+        require(delegate != address(0), "Invalid wallet address");
+        emit Approval(msg.sender, delegate, numTokens);
+        return true;
+    }
+      
+    function transferFrom(address from, address to, uint256 value) public override
+  isActived returns(bool) {
+        require(allowed[from][to] >= value,"Amount to transfer exceeds the allowance");
+        require(addressToBalance[from] >= value,"Insuficient balance from address");
+        require(from != address(0), "Invalid owner wallet address");
+        require(to != address(0), "Invalid target wallet adress");
+
+        addressToBalance[from] = addressToBalance[from].sub(value);
+        //addressToBalance[from] -= value;
+        addressToBalance[to] = addressToBalance[to].add(value);
+        //addressToBalance[to] += value;
+        allowed[from][to] = allowed[from][to].sub(value);
+        //allowed[from][to] -=value;
+        emit Transfer(from, to, value);
+
+        return true;
+    }
+
+    function toMint(uint256 amount) public isOwner isActived returns(bool) {
+        totalsupply += amount;
+        //addressToBalance[msg.sender] += amount;
+        addressToBalance[msg.sender] = addressToBalance[msg.sender].add(amount);
+        emit Minted(msg.sender, amount);
+
+        return true;
+    }
+
+    function toBurn(uint256 amount) public isOwner isActived returns(bool) {
+        totalsupply -= amount;
+        //addressToBalance[msg.sender] -= amount;
+        addressToBalance[msg.sender] = addressToBalance[msg.sender].sub(amount);
+
+        emit Burned(msg.sender, amount);
+
+        return true;
+    }
+
+    function changeState(uint8 newState) public isOwner returns(bool) {
+        require(newState < 3, "Invalid status option!");
+
+        if (newState == 0) {
+            require(contractState != status.ACTIVE, "The status is already ACTIVE");
+            contractState = status.ACTIVE;
+        } else if (newState == 1) {
+            require(contractState != status.PAUSED, "The status is already PAUSED");
+            contractState = status.PAUSED;
+        } else {
+            require(contractState != status.CANCELLED, "The status is already CANCELLED");
+            contractState = status.CANCELLED;
+        }
+
+        return true;
+    }
+
+    function refill(address receiver,uint256 amount, address msgaddress) external isActived returns(uint256){
+        require(msgaddress == owner, "Only the owner can refill.");
+        require(amount <= addressToBalance[msgaddress], "Insufficient Balance to Transfer");
+        addressToBalance[msgaddress] = addressToBalance[msgaddress].sub(amount);
+        addressToBalance[receiver] = addressToBalance[receiver].add(amount);
+
+
+
+        return amount;
+       
+    }
+
+    // Kill
+    function kill() public isOwner {
+        require(contractState == status.CANCELLED, "It's necessary to cancel the contract before to kill it!");
+        emit Killed(msg.sender);
+        selfdestruct(payable(owner));
+    }
+
+}
+
+
+library Math {
+
+    function add(uint256 a, uint256 b) public pure returns(uint256){
+        uint256 c = a + b;
+        assert(c >= a);
+        return c;
+    }
+
+    function sub(uint256 a, uint256 b) public pure returns(uint256){
+        assert(b <= a);
+        return a - b;
+    }
+
+}
