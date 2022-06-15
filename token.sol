@@ -1,7 +1,4 @@
 // SPDX-License-Identifier: GPL-3.0
-//Tests do token para o desafio final.
-
-//CORRIGIDO E TESTADO EM 11/06 21:55  (L. Henrique)   = )
 
 pragma solidity >=0.7.0 <0.9.0;
 
