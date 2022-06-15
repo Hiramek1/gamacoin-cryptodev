@@ -18,9 +18,9 @@ contract ExchangeMachine  {
     address payable private owner;
     address public tokenAddress;
     address[] private subscribers;
-    Status contractState; 
-    uint public constant tokensPerEth = 100;
-    
+    Status contractState;
+    uint public tokensPerEth = 100;
+
     // Modifiers
     modifier isOwner() {
         require(msg.sender == owner , "Sender is not owner!");
@@ -41,12 +41,10 @@ contract ExchangeMachine  {
         contractState = Status.ACTIVE;
     }
 
-    // When 'VendingMachine' contract is deployed:
-    // 1. set the deploying address as the owner of the contract
-    // 2. set the deployed smart contract's cupcake balance to 100
- 
+    // Falta pensar num sistema de governança
     // Allow the owner to increase the smart contract's cupcake balance
     function refillMachine(uint256 amount) public isActived isOwner {
+        require(amount <= tokensPerEth, "You must refill minimum tokens per ether amount");
         //require(msg.sender == owner, "Only the owner can refill.");  
         CryptoToken(tokenAddress).refill(address(this), amount, msg.sender);
         tokenName[address(this)] += amount;
@@ -84,11 +82,16 @@ contract ExchangeMachine  {
     function state() public view returns(Status) {
         return contractState;
     }
+    
+    function changeTokensPerEth(uint256 newtokensPerEth) public isOwner{
+        require(newtokensPerEth != 0, "zero can not");
+        tokensPerEth = newtokensPerEth;
+    }
 
     // Kill
     function kill() public isOwner {
         contractState = Status.CANCELLED;
         selfdestruct(owner);
     }
-    
+
 }
