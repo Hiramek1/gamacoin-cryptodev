@@ -33,7 +33,7 @@ contract ExchangeMachine  {
     }
 
    // Declare state variables of the contract
-    mapping (address => uint) public tokenName;
+    mapping (address => uint) public tokenBalance;
 
     constructor(address token) {
         owner = payable(msg.sender);
@@ -43,23 +43,28 @@ contract ExchangeMachine  {
 
     // Falta pensar num sistema de governança
     // Allow the owner to increase the smart contract's cupcake balance
-    function refillMachine(uint256 amount) public isActived isOwner {
-        require(amount <= tokensPerEth, "You must refill minimum tokens per ether amount");
-        //require(msg.sender == owner, "Only the owner can refill.");  
+    function refillTokens(uint256 amount) public isActived isOwner {
+        require(amount >= tokensPerEth, "You must refill minimum tokens per ether amount");
+        //require(msg.sender == owner, "Only the owner can refill.");
         CryptoToken(tokenAddress).refill(address(this), amount, msg.sender);
-        tokenName[address(this)] += amount;
+        tokenBalance[address(this)] += amount;
+    }
+
+   function refillEthers(uint256 amount) public payable isActived isOwner {
+        require(amount != 0, "You must refill at least 1 ether");
+        payable(owner).transfer(amount);
+        
     }
 
     // Allow anyone to purchase cupcakes
     function purchase() public payable {
         uint amountOfTokens = (msg.value/(10 ** 18)) * tokensPerEth;
         require(msg.value >= 1 ether, "You must pay at least 1 ETH per cupcake");
-        //tokenName[address(this)] = amountOfTokens;
-        require(tokenName[address(this)] >= amountOfTokens, "Not enough cupcakes in stock to complete this purchase");
-        tokenName[address(this)] -= amountOfTokens;
-        //tokenName[msg.sender] += amount;
+        //tokenBalance[address(this)] = amountOfTokens;
+        require(tokenBalance[address(this)] >= amountOfTokens, "Not enough cupcakes in stock to complete this purchase");
+        tokenBalance[address(this)] -= amountOfTokens;
+        tokenBalance[msg.sender] += amountOfTokens;
         CryptoToken(tokenAddress).transfer(msg.sender, amountOfTokens);
-
     }
 
     function changeState(uint8 newState) public isOwner returns(bool) {
@@ -84,8 +89,17 @@ contract ExchangeMachine  {
     }
     
     function changeTokensPerEth(uint256 newtokensPerEth) public isOwner{
-        require(newtokensPerEth != 0, "zero can not");
+        require(newtokensPerEth != 0, "Zero nao pode");
         tokensPerEth = newtokensPerEth;
+    }
+
+    function getBalance() public view returns(uint256) {
+        return address(this).balance;
+    }
+
+    function withdrawEthers() public payable isOwner {
+        address payable to = payable(msg.sender);
+        to.transfer(getBalance());
     }
 
     // Kill
