@@ -30,6 +30,18 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 12. Não deve ser possivel reabastecer a maquina com _ethers_ com valor zero.
 
 ## Técnicas e Tecnologias Utilizadas
+<table>
+  <tr>
+    <th>
+      <a href="https://docs.soliditylang.org/en/v0.8.15/">
+        <img alt="Solidity v0.8.15 homepage" src="https://en.bitcoinwiki.org/upload/en/images/d/d5/Solidity.png"
+             width="200" height="82">
+        </img>
+      </a>
+    </th>
+    <th>Nossos smart contracts estão desenvolvidos em **Solidity** </th>
+  </tr>
+</table>
 <p align="center">
-  Solidity, Blockchain, Repplit, Remix, GitHub
+  Solidity, Repplit, Remix, GitHub
 </p>
