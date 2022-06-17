@@ -10,7 +10,7 @@
     <td align="center" width="500px">
 	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev#equipe">Equipe</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#objetivo">Objetivo</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#objetivo">Documentação</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#documenta%C3%A7%C3%A3o-">Documentação</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#funcionalidades-">Funcionalidades</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o-">
 		Instruções de Instalação e Utilização</a><br>
@@ -30,8 +30,9 @@
 ## Objetivo [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
 
-## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
+##Documentação [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
+## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
 ## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
