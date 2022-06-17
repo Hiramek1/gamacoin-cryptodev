@@ -27,7 +27,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     </th>
     <th>Nossos smart contracts estão desenvolvidos em Solidity </th>
   </tr>
-	<tr>
+  <tr>
     <th>
       <a href="https://www.binance.com/pt-BR/blog/all/o-que-são-tokens-erc20-421499824684902563">
         <img alt="O Que São Tokens ERC20 - Binance" src="https://investorshub.advfn.com/uimage/uploads/2018/3/21/qpusdcointelegraph2.png"
@@ -58,7 +58,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     </th>
     <th>Realizamos todos os testes de execução na plataforma Remix IDE </th>
   </tr>
-	<tr>
+  <tr>
     <th>
       <a href="https://github.com">
         <img alt="Remix - Ethereum IDE" src="https://sempreupdate.com.br/wp-content/uploads/2021/08/genexus.jpg"
@@ -67,12 +67,9 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
       </a>
     </th>
     <th>O código fonte do projeto e versionamento, bem como <br>
-					esta documentação estão armazenados no GitHub</th>
+	esta documentação estão armazenados no GitHub</th>
   </tr>
 </table>
-<p align="center">
-  Solidity, Repplit, Remix, GitHub
-</p>
 
 ## Critérios de aceite 
 1. ~~Criou o próprio Contrato Inteligente de Token.~~
