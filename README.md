@@ -1,7 +1,7 @@
 # 🏦 Sollunah Coin 📚 Web 3.0
 
 <p align="center">
-  <img src="https://media.tenor.com/images/63dc70b43a949617fdfa3447868d534d/tenor.gif" alt="Hulk Smart"/>
+  <img src="https://media.giphy.com/media/MVlRUmPRsAnRe/giphy.gif" alt="Hulk Smart"/>
 </p>
 
 ## Objetivo
