@@ -1,4 +1,4 @@
-# 🏦 Gama Token 📚 Web 3.0
+# 🏦 Sollunah Coin 📚 Web 3.0
 
 <p align="center">
   <img src="https://media.tenor.com/images/63dc70b43a949617fdfa3447868d534d/tenor.gif" alt="Hulk Smart"/>
