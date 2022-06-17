@@ -15,20 +15,6 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     * Endereço dos contratos e a rede em que ela foi publicada.
     * Membros envolvidos no projeto com seus perfis do github associados
 
-## Critérios de aceite 
-1. Criou o próprio Contrato Inteligente de Token.
-2. Criou o próprio Contrato Ingeligente de Maquina de Venda do Token.
-3. O Comprador deve ser possivel comprar tokens com _ethers_.
-4. O Vendedor deve ser possivel vender tokens por _ethers_.
-5. O administrador deve ser capaz de reabastecer a maquina com _tokens_ e _ethers_.
-6. O adminsitrador deve ser capaz de sacar o saldo em _ethers_
-7. O administrador deve ser capaz de redefinir o valor dos _tokens_ para compra.
-8. O administrador deve ser capaz de redefinir o valor dos _tokens_ para venda.
-9. Não deve ser possivel comprar _tokens_ com valor zero.
-10. Não deve ser possivel vender _tokens_ com valor zero.
-11. Não deve ser possivel reabastecer a maquina com _tokens_ com valor zero.
-12. Não deve ser possivel reabastecer a maquina com _ethers_ com valor zero.
-
 ## Técnicas e Tecnologias Utilizadas
 <table>
   <tr>
@@ -87,3 +73,18 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 <p align="center">
   Solidity, Repplit, Remix, GitHub
 </p>
+
+## Critérios de aceite 
+1. ~~Criou o próprio Contrato Inteligente de Token.~~
+2. ~~Criou o próprio Contrato Ingeligente de Maquina de Venda do Token.~~
+3. ~~O Comprador deve ser possivel comprar tokens com ethers.~~
+4. ~~O Vendedor deve ser possivel vender tokens por ethers.~~
+5. ~~O administrador deve ser capaz de reabastecer a maquina com tokens e ethers.~~
+6. ~~O adminsitrador deve ser capaz de sacar o saldo em ethers~~
+7. ~~O administrador deve ser capaz de redefinir o valor dos tokens para compra.~~
+8. ~~O administrador deve ser capaz de redefinir o valor dos tokens para venda.~~
+9. ~~Não deve ser possivel comprar tokens com valor zero.~~
+10. ~~Não deve ser possivel vender tokens com valor zero.~~
+11. ~~Não deve ser possivel reabastecer a maquina com tokens com valor zero.~~
+12. ~~Não deve ser possivel reabastecer a maquina com ethers com valor zero.~~
+
