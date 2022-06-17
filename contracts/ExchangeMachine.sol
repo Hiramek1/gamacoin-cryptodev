@@ -7,17 +7,24 @@ import "./token.sol";
 contract ExchangeMachine  {
 
     // Using Libs
+    using Math for uint256;
 
-    // Structs
-
-
+    // Events
+    event Killed(address killedBy);
+    //refillTokens
+    //refillEthers
+    //purchase
+    //sellTokens
+    //changeState
+    //changeTokensPerEth
+    //withdrawEthers
+  
     // Enum
     enum Status { ACTIVE, PAUSED, CANCELLED } // mesmo que uint8
 
     // Properties
     address payable private owner;
     address public tokenAddress;
-    address[] private subscribers;
     Status contractState;
     uint public tokensPerEth = 100;
 
@@ -41,31 +48,35 @@ contract ExchangeMachine  {
         contractState = Status.ACTIVE;
     }
 
-    // Falta pensar num sistema de governança
-    // Allow the owner to increase the smart contract's cupcake balance
+    // Allow the owner to increase the smart contract's sollunah balance
     function refillTokens(uint256 amount) public isActived isOwner {
         require(amount >= tokensPerEth, "You must refill minimum tokens per ether amount");
-        //require(msg.sender == owner, "Only the owner can refill.");
         CryptoToken(tokenAddress).refill(address(this), amount, msg.sender);
-        tokenBalance[address(this)] += amount;
+        tokenBalance[address(this)] = tokenBalance[address(this)].add(amount);
     }
 
    function refillEthers(uint256 amount) public payable isActived isOwner {
         require(amount != 0, "You must refill at least 1 ether");
         payable(owner).transfer(amount);
-        
     }
 
-    // Allow anyone to purchase cupcakes
+    // Allow anyone to purchase sollunah
     function purchase() public payable {
         uint amountOfTokens = (msg.value/(10 ** 18)) * tokensPerEth;
-        require(msg.value >= 1 ether, "You must pay at least 1 ETH per cupcake");
-        //tokenBalance[address(this)] = amountOfTokens;
-        require(tokenBalance[address(this)] >= amountOfTokens, "Not enough cupcakes in stock to complete this purchase");
+        require(msg.value >= 1 ether, "You must pay at least 1 ETH per sollunah batch");
+        require(tokenBalance[address(this)] >= amountOfTokens, "Not enough sollunah in stock to complete this purchase");
         tokenBalance[address(this)] -= amountOfTokens;
         tokenBalance[msg.sender] += amountOfTokens;
         CryptoToken(tokenAddress).transfer(msg.sender, amountOfTokens);
     }
+
+    function sellTokens(uint256 amount) public payable {
+        require(amount >= tokensPerEth,"You must pay at least 1 sollunah batch per ETH");
+        CryptoToken(tokenAddress).sell(address(this), amount, msg.sender);
+        tokenBalance[address(this)] += amount;
+        address payable to = payable(msg.sender);
+        to.transfer((((amount/tokensPerEth)*(10**18))/10)*9);
+     }
 
     function changeState(uint8 newState) public isOwner returns(bool) {
         require(newState < 3, "Invalid status option!");
@@ -89,7 +100,7 @@ contract ExchangeMachine  {
     }
     
     function changeTokensPerEth(uint256 newtokensPerEth) public isOwner{
-        require(newtokensPerEth != 0, "Zero nao pode");
+        require(newtokensPerEth != 0, "You must charge at least 1 token per ETH");
         tokensPerEth = newtokensPerEth;
     }
 
@@ -104,7 +115,11 @@ contract ExchangeMachine  {
 
     // Kill
     function kill() public isOwner {
-        contractState = Status.CANCELLED;
+        require(contractState == status.CANCELLED, "It's necessary to cancel the contract before to kill it!");
+        emit Killed(msg.sender);
+        address payable to = payable(msg.sender);
+        to.transfer(getBalance());
+        CryptoToken(tokenAddress).transfer(msg.sender, tokenBalance[address(this)]);
         selfdestruct(owner);
     }
 
