@@ -9,7 +9,7 @@
     </td>
     <td align="center" width="500px">
 	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev#equipe">Equipe</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev#objetivo">Objetivo</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#objetivo-">Objetivo</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#documenta%C3%A7%C3%A3o-">Documentação</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#funcionalidades-">Funcionalidades</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o-">
