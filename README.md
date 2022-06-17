@@ -1,26 +1,41 @@
 # 🏦 Sollunah Coin 📚 Web 3.0
 
-<table>
+<table align="center">
   <tr>
-    <td>
-      <img src="https://media.giphy.com/media/FPpTEGx7OlNbxRgpKd/giphy.gif" alt="Happy Lets Go GIF By NBC"/>
+    <td align="center" width="500px">
+      <img src="https://media.giphy.com/media/FPpTEGx7OlNbxRgpKd/giphy.gif" alt="Happy Lets Go GIF By NBC"
+	   width="360" height="360"/> <br>
+      <h1 align="center">VENDING MACHINE!!</h1>
+    </td>
+    <td align="center" width="500px">
+	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipe">Equipe</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#objetivo">Objetivo</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#objetivo">Documentação</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#funcionalidades">Funcionalidades</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o">
+		Instruções de Instalação e Utilização</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#t%C3%A9cnicas-e-tecnologias-utilizadas">
+		Técnicas e Tecnologias Utilizadas</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#crit%C3%A9rios-de-aceite">Critérios de aceite</a><br></h2>
     </td>
   </tr>
-	<tr>
 </table>
+
+## Equipe
+[Annita Gabriella Souza Da Silva](https://github.com/AnnitaGabriella)<br>
+[Luis Henrique Santana De Sousa](https://github.com/Henrikess)<br>
+[Hugo Vinícius Valentim Damasceno](https://github.com/Hiramek1)<br>
+[Lorrana Filemes De Castro](https://github.com/Lofilemes)<br>
 
 ## Objetivo
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
 
-## Artefatos e entregaveis
-* Código Fonte (Solidity)
-* Fork deste repositório contendo:
-    * Instruções de Instalação e operação
-    * Detalhamento das funcionalidades
-    * Endereço dos contratos e a rede em que ela foi publicada.
-    * Membros envolvidos no projeto com seus perfis do github associados
+## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
 
-## Técnicas e Tecnologias Utilizadas
+## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
+
+## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
+
 <table>
   <tr>
     <th>
@@ -71,7 +86,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   </tr>
 </table>
 
-## Critérios de aceite 
+## Critérios de aceite [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
 1. ~~Criou o próprio Contrato Inteligente de Token.~~
 2. ~~Criou o próprio Contrato Ingeligente de Maquina de Venda do Token.~~
 3. ~~O Comprador deve ser possivel comprar tokens com ethers.~~
@@ -84,4 +99,3 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 10. ~~Não deve ser possivel vender tokens com valor zero.~~
 11. ~~Não deve ser possivel reabastecer a maquina com tokens com valor zero.~~
 12. ~~Não deve ser possivel reabastecer a maquina com ethers com valor zero.~~
-
