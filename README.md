@@ -1,8 +1,13 @@
 # 🏦 Sollunah Coin 📚 Web 3.0
 
-<p align="center">
-  <img src="https://media.giphy.com/media/MVlRUmPRsAnRe/giphy.gif" alt="Hulk Smart"/>
-</p>
+<table>
+  <tr>
+    <td>
+      <img src="https://media.giphy.com/media/FPpTEGx7OlNbxRgpKd/giphy.gif" alt="Happy Lets Go GIF By NBC"/>
+    </td>
+  </tr>
+	<tr>
+</table>
 
 ## Objetivo
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
@@ -21,8 +26,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     <th>
       <a href="https://docs.soliditylang.org/en/v0.8.15/">
         <img alt="Solidity v0.8.15 homepage" src="https://avantrio.xyz/blog/wp-content/uploads/2020/02/solidity-nedir.png"
-             width="200" height="82">
-        </img>
+             width="200" height="82"/>
       </a>
     </th>
     <th>Nossos smart contracts estão desenvolvidos em Solidity </th>
@@ -31,8 +35,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     <th>
       <a href="https://www.binance.com/pt-BR/blog/all/o-que-são-tokens-erc20-421499824684902563">
         <img alt="O Que São Tokens ERC20 - Binance" src="https://investorshub.advfn.com/uimage/uploads/2018/3/21/qpusdcointelegraph2.png"
-             width="200" height="82">
-        </img>
+             width="200" height="82"/>
       </a>
     </th>
     <th>Seguimos o modelo ERC20 para nossos Tokens</th>
@@ -41,8 +44,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     <th>
       <a href="https://replit.com/@replit/Solidity-starter-beta?v=1">
         <img alt="Replit Solidity starter template beta" src="https://members-csforall.imgix.net/members/logos/replit-logo.jpeg"
-             width="200" height="100">
-        </img>
+             width="200" height="100"/>
       </a>
     </th>
     <th>Durante o desenvolvimento utilizamos a plataforma Replit<br>
@@ -52,8 +54,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     <th>
       <a href="https://remix.ethereum.org">
         <img alt="Remix - Ethereum IDE" src="https://res.cloudinary.com/practicaldev/image/fetch/s--hCoxxtbJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzb9qq93wl5fcfdp39cl.png"
-             width="200" height="140">
-        </img>
+             width="200" height="140"/>
       </a>
     </th>
     <th>Realizamos todos os testes de execução na plataforma Remix IDE </th>
@@ -62,8 +63,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
     <th>
       <a href="https://github.com">
         <img alt="Remix - Ethereum IDE" src="https://sempreupdate.com.br/wp-content/uploads/2021/08/genexus.jpg"
-             width="200" height="106">
-        </img>
+             width="200" height="106"/>
       </a>
     </th>
     <th>O código fonte do projeto e versionamento, bem como <br>
