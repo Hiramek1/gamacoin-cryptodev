@@ -8,15 +8,15 @@
       <h1 align="center">VENDING MACHINE!!</h1>
     </td>
     <td align="center" width="500px">
-	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipe">Equipe</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#objetivo">Objetivo</a><br>
+	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev#equipe">Equipe</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#objetivo">Objetivo</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#objetivo">Documentação</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#funcionalidades">Funcionalidades</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o">
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#funcionalidades-">Funcionalidades</a><br>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o-">
 		Instruções de Instalação e Utilização</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#t%C3%A9cnicas-e-tecnologias-utilizadas">
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#t%C3%A9cnicas-e-tecnologias-utilizadas-">
 		Técnicas e Tecnologias Utilizadas</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#crit%C3%A9rios-de-aceite">Critérios de aceite</a><br></h2>
+	<a href="https://github.com/Hiramek1/sollunah-cryptodev#crit%C3%A9rios-de-aceite-">Critérios de aceite</a><br></h2>
     </td>
   </tr>
 </table>
@@ -27,14 +27,15 @@
 [Hugo Vinícius Valentim Damasceno](https://github.com/Hiramek1)<br>
 [Lorrana Filemes De Castro](https://github.com/Lofilemes)<br>
 
-## Objetivo
+## Objetivo [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
 
-## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
+## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
-## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
 
-## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
+## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
+
+## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
 <table>
   <tr>
@@ -86,7 +87,7 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   </tr>
 </table>
 
-## Critérios de aceite [^](https://github.com/Hiramek1/sollunah-cryptodev/edit/main/README.md#equipeobjetivodocumenta%C3%A7%C3%A3ofuncionalidadesinstru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3ot%C3%A9cnicas-e-tecnologias-utilizadascrit%C3%A9rios-de-aceite)
+## Critérios de aceite [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 1. ~~Criou o próprio Contrato Inteligente de Token.~~
 2. ~~Criou o próprio Contrato Ingeligente de Maquina de Venda do Token.~~
 3. ~~O Comprador deve ser possivel comprar tokens com ethers.~~
