@@ -70,8 +70,8 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   <tr>
     <th>
       <a href="https://remix.ethereum.org">
-        <img alt="Remix - Ethereum IDE" src="https://res.cloudinary.com/practicaldev/image/fetch/s--hCoxxtbJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzb9qq93wl5fcfdp39cl.png"
-             width="200" height="140"/>
+        <img alt="Remix - Ethereum IDE" src="https://miro.medium.com/max/840/1*3jj5tQildSIyhl-RO6RLlA.png"
+             width="200" height="182"/>
       </a>
     </th>
     <th>Realizamos todos os testes de execução na plataforma Remix IDE </th>
@@ -79,12 +79,21 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   <tr>
     <th>
       <a href="https://github.com">
-        <img alt="Remix - Ethereum IDE" src="https://sempreupdate.com.br/wp-content/uploads/2021/08/genexus.jpg"
+        <img alt="GitHub" src="https://sempreupdate.com.br/wp-content/uploads/2021/08/genexus.jpg"
              width="200" height="106"/>
       </a>
     </th>
     <th>O código fonte do projeto e versionamento, bem como <br>
 	esta documentação estão armazenados no GitHub</th>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://trello.com">
+        <img alt="Trello Official Website" src="https://blog.saninternet.com/wp-content/uploads/2017/11/como-ser-mais-produtivo-trello-SECNET-868x488-1.jpg"
+             width="200" height="106"/>
+      </a>
+    </th>
+    <th>Organizamos nossas tarefas através da plataforma Trello</th>
   </tr>
 </table>
 
