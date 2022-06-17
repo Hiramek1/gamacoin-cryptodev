@@ -34,12 +34,54 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   <tr>
     <th>
       <a href="https://docs.soliditylang.org/en/v0.8.15/">
-        <img alt="Solidity v0.8.15 homepage" src="https://en.bitcoinwiki.org/upload/en/images/d/d5/Solidity.png"
+        <img alt="Solidity v0.8.15 homepage" src="https://avantrio.xyz/blog/wp-content/uploads/2020/02/solidity-nedir.png"
              width="200" height="82">
         </img>
       </a>
     </th>
-    <th>Nossos smart contracts estão desenvolvidos em **Solidity** </th>
+    <th>Nossos smart contracts estão desenvolvidos em Solidity </th>
+  </tr>
+	<tr>
+    <th>
+      <a href="https://www.binance.com/pt-BR/blog/all/o-que-são-tokens-erc20-421499824684902563">
+        <img alt="O Que São Tokens ERC20 - Binance" src="https://investorshub.advfn.com/uimage/uploads/2018/3/21/qpusdcointelegraph2.png"
+             width="200" height="82">
+        </img>
+      </a>
+    </th>
+    <th>Seguimos o modelo ERC20 para nossos Tokens</th>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://replit.com/@replit/Solidity-starter-beta?v=1">
+        <img alt="Replit Solidity starter template beta" src="https://members-csforall.imgix.net/members/logos/replit-logo.jpeg"
+             width="200" height="100">
+        </img>
+      </a>
+    </th>
+    <th>Durante o desenvolvimento utilizamos a plataforma Replit<br>
+        para editar o código simultaneamente</th>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://remix.ethereum.org">
+        <img alt="Remix - Ethereum IDE" src="https://res.cloudinary.com/practicaldev/image/fetch/s--hCoxxtbJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzb9qq93wl5fcfdp39cl.png"
+             width="200" height="140">
+        </img>
+      </a>
+    </th>
+    <th>Realizamos todos os testes de execução na plataforma Remix IDE </th>
+  </tr>
+	<tr>
+    <th>
+      <a href="https://github.com">
+        <img alt="Remix - Ethereum IDE" src="https://sempreupdate.com.br/wp-content/uploads/2021/08/genexus.jpg"
+             width="200" height="106">
+        </img>
+      </a>
+    </th>
+    <th>O código fonte do projeto e versionamento, bem como <br>
+					esta documentação estão armazenados no GitHub</th>
   </tr>
 </table>
 <p align="center">
