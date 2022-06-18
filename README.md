@@ -88,6 +88,16 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
   </tr>
   <tr>
     <th>
+      <a href="https://hardhat.org">
+        <img alt="Hardhat - Ethereum development environment for professionals" src="https://hardhat.org/card.jpg"
+             width="200" height="106"/>
+      </a>
+    </th>
+    <th>Utilizamos o ambiente de desenvolvimento Hardhat<br>
+	para realização dos testes unitários</th>
+  </tr>
+  <tr>
+    <th>
       <a href="https://trello.com">
         <img alt="Trello Official Website" src="https://blog.saninternet.com/wp-content/uploads/2017/11/como-ser-mais-produtivo-trello-SECNET-868x488-1.jpg"
              width="200" height="106"/>
