@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "./token.sol";
+import "./Sollunah.sol";
 
 contract ExchangeMachine  {
 
