@@ -115,9 +115,19 @@ npx hardhat test
   </tr>
   <tr>
     <th>
+      <a href="https://code.visualstudio.com">
+        <img alt="Visual Studio Code - Code Editing. Redefined" src="https://wikiimg.tojsiabtv.com/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/150px-Visual_Studio_Code_1.35_icon.svg.png"
+             width="200" height="106"/>
+      </a>
+    </th>
+    <th>Precisamos do compilador Visual Studio Code para<br>
+	nosso ambiente de testes</th>
+  </tr>
+  <tr>
+    <th>
       <a href="https://trello.com">
         <img alt="Trello Official Website" src="https://blog.saninternet.com/wp-content/uploads/2017/11/como-ser-mais-produtivo-trello-SECNET-868x488-1.jpg"
-             width="200" height="106"/>
+             width="200" height="200"/>
       </a>
     </th>
     <th>Organizamos nossas tarefas através da plataforma Trello</th>
