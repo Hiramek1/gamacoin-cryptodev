@@ -164,6 +164,13 @@ contract Sollunah is IERC20 {
         return address(this).balance;
     }
 
+    function changeOwner(address payable newOwnerContract) public isOwner returns (bool){
+        owner = newOwnerContract;
+        //emit OwnerChanged(owner, newOwnerContract);
+
+        return true;
+    }
+
     // Kill
     function kill() public isOwner {
         require(contractState == status.CANCELLED, "It's necessary to cancel the contract before to kill it!");

@@ -1,8 +1,9 @@
-const { expect } = require("chai");
+const { expect, assert } = require("chai");
 const { ethers } = require("hardhat");
 const { it } = require("mocha");
 
-describe("isTokenDeployed", () => {
+
+describe("Owner Permissions", () => {
 
   let owner, account1, account2, account3;
   let Token, token;
@@ -14,6 +15,21 @@ describe("isTokenDeployed", () => {
     await token.deployed()
     const zeroWallet = "0x0000000000000000000000000000000000000000"; 
   })
+
+  it("Should change the owner of the contract", async function()  {
+
+    await token.changeOwner(account1.address)
+
+    assert(true);
+    
+  })
+
+  it("checking owner permissions", async function() {
+      expect(token.connect(account1).toMint(1000)).to.be.revertedWith("Sender is not owner!")
+      expect(token.connect(account1).toBurn(1000)).to.be.revertedWith("Sender is not owner!")
+      expect(token.connect(account1).kill()).to.be.revertedWith("Sender is not owner!")
+      expect(token.connect(account1).changeState(2)).to.be.revertedWith("Sender is not owner!")
+    })
 
   
   });
@@ -96,7 +112,7 @@ describe("statusChanges", () => {
     token = await Token.deploy()
     await token.deployed()
     const zeroWallet = "0x0000000000000000000000000000000000000000"; 
-  })
+  })  
   
       it("Should only transfer if status is active", async function()  {
 		  const pausable = await token.changeState(1);

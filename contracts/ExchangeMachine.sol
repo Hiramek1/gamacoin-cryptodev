@@ -129,6 +129,13 @@ contract ExchangeMachine  {
         emit WithdrawEthers(msg.sender, to);
     }
 
+    function changeOwner(address payable newOwnerContract) public isOwner returns (bool){
+        owner = newOwnerContract;
+        //emit OwnerChanged(owner, newOwnerContract);
+
+        return true;
+    }
+    
     // Kill
     function kill() public isOwner {
         require(contractState == Status.CANCELLED, "It's necessary to cancel the contract before to kill it!");
