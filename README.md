@@ -36,6 +36,16 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 
 ## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
+
 ## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
 <table>

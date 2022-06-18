@@ -1,0 +1,29 @@
+{
+  "name": "gamacoin-cryptodev",
+  "version": "1.0.0",
+  "description": "<table align=\"center\">\r   <tr>\r     <td align=\"center\" width=\"500px\">\r       <img src=\"https://media.giphy.com/media/FPpTEGx7OlNbxRgpKd/giphy.gif\" alt=\"Happy Lets Go GIF By NBC\"\r \t   width=\"360\" height=\"360\"/> <br>\r       <h1 align=\"center\">VENDING MACHINE!!</h1>\r     </td>\r     <td align=\"center\" width=\"500px\">\r \t<h2><a href=\"https://github.com/Hiramek1/sollunah-cryptodev#equipe\">Equipe</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#objetivo-\">Objetivo</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#documenta%C3%A7%C3%A3o-\">Documentação</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#funcionalidades-\">Funcionalidades</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o-\">\r \t\tInstruções de Instalação e Utilização</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#t%C3%A9cnicas-e-tecnologias-utilizadas-\">\r \t\tTécnicas e Tecnologias Utilizadas</a><br>\r \t<a href=\"https://github.com/Hiramek1/sollunah-cryptodev#crit%C3%A9rios-de-aceite-\">Critérios de aceite</a><br></h2>\r     </td>\r   </tr>\r </table>",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hiramek1/gamacoin-cryptodev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hiramek1/gamacoin-cryptodev/issues"
+  },
+  "homepage": "https://github.com/Hiramek1/gamacoin-cryptodev#readme",
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "hardhat": "^2.9.9",
+    "typescript": "^4.7.4"
+  }
+}
