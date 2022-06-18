@@ -22,7 +22,7 @@ interface IERC20 {
 
 }
 
-contract CryptoToken is IERC20 {
+contract Sollunah is IERC20 {
 
     //  Libs
     using Math for uint256;
@@ -34,7 +34,7 @@ contract CryptoToken is IERC20 {
     string public constant name = "Sollunah";
     string public constant symbol = "SNA";
     uint8 public constant decimals = 18;
-    address private owner;
+    address payable private owner;
     uint256 private totalsupply;
     status contractState;
 
@@ -48,13 +48,13 @@ contract CryptoToken is IERC20 {
         _;
     }
 
-    modifier isActived() {
+    modifier isActive() {
         require(contractState == status.ACTIVE, "The contract is not acvite!");
         _;
     }
 
     constructor() {
-        owner = msg.sender;
+        owner = payable(msg.sender);
         totalsupply = 21000000; //Implementar decimais ( 8)
         addressToBalance[msg.sender] = totalsupply;
         contractState = status.ACTIVE;
@@ -73,7 +73,7 @@ contract CryptoToken is IERC20 {
         return contractState;
     }
 
-    function transfer(address receiver, uint256 quantity) external override isActived returns(bool) {
+    function transfer(address receiver, uint256 quantity) external override isActive returns(bool) {
         require(quantity <= addressToBalance[msg.sender], "Insufficient Balance to Transfer");
         addressToBalance[msg.sender] = addressToBalance[msg.sender].sub(quantity);
         addressToBalance[receiver] = addressToBalance[receiver].add(quantity);
@@ -87,7 +87,7 @@ contract CryptoToken is IERC20 {
     }
 
     function approve(address delegate, uint256 numTokens) external override
-isActived  returns (bool) {
+isActive  returns (bool) {
         allowed[msg.sender][delegate] = numTokens;
         require(delegate != address(0), "Invalid wallet address");
         emit Approval(msg.sender, delegate, numTokens);
@@ -95,7 +95,7 @@ isActived  returns (bool) {
     }
       
     function transferFrom(address from, address to, uint256 value) public override
-  isActived returns(bool) {
+  isActive returns(bool) {
         require(allowed[from][to] >= value,"Amount to transfer exceeds the allowance");
         require(addressToBalance[from] >= value,"Insuficient balance from address");
         require(from != address(0), "Invalid owner wallet address");
@@ -109,7 +109,7 @@ isActived  returns (bool) {
         return true;
     }
 
-    function toMint(uint256 amount) public isOwner isActived returns(bool) {
+    function toMint(uint256 amount) public isOwner isActive returns(bool) {
         totalsupply += amount;
         addressToBalance[msg.sender] = addressToBalance[msg.sender].add(amount);
         emit Minted(msg.sender, amount);
@@ -117,7 +117,7 @@ isActived  returns (bool) {
         return true;
     }
 
-    function toBurn(uint256 amount) public isOwner isActived returns(bool) {
+    function toBurn(uint256 amount) public isOwner isActive returns(bool) {
         totalsupply -= amount;
         addressToBalance[msg.sender] = addressToBalance[msg.sender].sub(amount);
 
@@ -143,7 +143,7 @@ isActived  returns (bool) {
         return true;
     }
 
-    function refill(address receiver,uint256 amount, address msgaddress) external isActived returns(uint256){
+    function refill(address receiver,uint256 amount, address msgaddress) external isActive returns(uint256){
         require(msgaddress == owner, "Only the owner can refill.");
         require(amount <= addressToBalance[msgaddress], "Insufficient Balance to Transfer");
         addressToBalance[msgaddress] = addressToBalance[msgaddress].sub(amount);
@@ -152,21 +152,24 @@ isActived  returns (bool) {
       return amount;
     }
   
-     function sell(address receiver,uint256 amount, address msgaddress) external isActived returns(uint256){
+     function sell(address receiver,uint256 amount, address msgaddress) external isActive returns(bool){
         require(amount <= addressToBalance[msgaddress], "Insufficient Balance to Transfer");
         addressToBalance[msgaddress] = addressToBalance[msgaddress].sub(amount);
         addressToBalance[receiver] = addressToBalance[receiver].add(amount);
 
-      return amount;
+      return true;
+    }
+
+    function getBalance() public view returns(uint256) {
+        return address(this).balance;
     }
 
     // Kill
     function kill() public isOwner {
         require(contractState == status.CANCELLED, "It's necessary to cancel the contract before to kill it!");
-        emit Killed(msg.sender);
         address payable to = payable(msg.sender);
         to.transfer(getBalance());
-        CryptoToken(tokenAddress).transfer(msg.sender, tokenBalance[address(this)]);
+        emit Killed(msg.sender);
         selfdestruct(owner);
     }
 
