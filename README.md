@@ -10,7 +10,6 @@
     <td align="center" width="500px">
 	<h2><a href="https://github.com/Hiramek1/sollunah-cryptodev#equipe">Equipe</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#objetivo-">Objetivo</a><br>
-	<a href="https://github.com/Hiramek1/sollunah-cryptodev#documenta%C3%A7%C3%A3o-">Documentação</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#funcionalidades-">Funcionalidades</a><br>
 	<a href="https://github.com/Hiramek1/sollunah-cryptodev#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-utiliza%C3%A7%C3%A3o-">
 		Instruções de Instalação e Utilização</a><br>
@@ -30,9 +29,11 @@
 ## Objetivo [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
 
-## Documentação [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
-
 ## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
+<a href="https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d">
+   <p align="center"> Confira o detalhamento completo de nossas funcionalidades no Notion! </p>
+   <img src="https://i.imgur.com/ZxTLtpc.png"/>
+</a>
 
 ## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
@@ -40,19 +41,24 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 
 - O contrato de Tokens e o contrato da Máquina de Vendas poderão ser testados através da plataforma [Remix IDE](remix.ethereum.org)
 - Será possível importar os arquivos de [Token](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/token.sol) e [ExhangeMachine](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/ExchangeMachine.sol) através de seus links no botão "GitHub".
-- No menu à esquerda, procure pelo botão Deploy & run transactions. Primeiro seleciona o contrato da Sollunah para fazer Deploy e copie seu endereço de Deployed Contracts, logo abaixo. Em seguida, abra o arquivo ExchangeMachine.sol e ele irá aparecer nos contratos disponíveis para Deploy. Cole o endereço do contrato da Sollunah e faça Deploy deste também.
-- Utilize nossa documentação de [funcionalidades]() para entender como você pode navegar. Divirta-se!
+- No menu à esquerda, procure pelo botão Deploy & run transactions. Primeiro selecione o contrato da Sollunah para fazer Deploy e copie seu endereço de Deployed Contracts, logo abaixo. Em seguida, abra o arquivo ExchangeMachine.sol e ele irá aparecer nos contratos disponíveis para Deploy. Cole o endereço do contrato da Sollunah e faça Deploy deste também.
+- Utilize nossa documentação de [funcionalidades](https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d) para entender como você pode navegar. Divirta-se!
 
 ###### Testes
 - A execução dos testes deve ser feita num compilador como [VS Code](https://code.visualstudio.com)
 - Tenha em sua máquina a versão recomendada do [Node](https://nodejs.org/en/)
 - Através do prompt de comando, execute os comandos a seguir no diretório do projeto:
 ```shell
-npm install
+npm install --save-dev hardhat
 npx hardhat compile
 npx hardhat test
 ```
-
+- Caso você já tenha yarn global na máquina, modifique apenas o npm
+```shell
+yarn install --save-dev hardhat
+npx hardhat compile
+npx hardhat test
+```
 ## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
 <table>
@@ -87,8 +93,8 @@ npx hardhat test
   <tr>
     <th>
       <a href="https://remix.ethereum.org">
-        <img alt="Remix - Ethereum IDE" src="https://miro.medium.com/max/840/1*3jj5tQildSIyhl-RO6RLlA.png"
-             width="200" height="182"/>
+        <img alt="Remix - Ethereum IDE" src="https://i.imgur.com/Nq1ImZp.jpg"
+             width="200" height="80"/>
       </a>
     </th>
     <th>Realizamos todos os testes de execução na plataforma Remix IDE </th>
@@ -117,7 +123,7 @@ npx hardhat test
     <th>
       <a href="https://code.visualstudio.com">
         <img alt="Visual Studio Code - Code Editing. Redefined" src="https://www.freecodecamp.org/news/content/images/size/w2000/2021/08/vscode.png"
-             width="200" height="90"/>
+             width="200" height="100"/>
       </a>
     </th>
     <th>Precisamos do compilador Visual Studio Code para<br>
@@ -131,6 +137,15 @@ npx hardhat test
       </a>
     </th>
     <th>Organizamos nossas tarefas através da plataforma Trello</th>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://www.notion.so/">
+        <img alt="Notion – One workspace. Every team." src="https://l3software.com.br/wp-content/uploads/2020/11/notion-labs-inc-logo-vector.png"
+             width="200" height="106"/>
+      </a>
+    </th>
+    <th>Temos nossas funcionalidades descritas através do Notion</th>
   </tr>
 </table>
 
