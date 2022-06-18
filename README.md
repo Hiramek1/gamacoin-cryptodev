@@ -127,7 +127,7 @@ npx hardhat test
     <th>
       <a href="https://trello.com">
         <img alt="Trello Official Website" src="https://blog.saninternet.com/wp-content/uploads/2017/11/como-ser-mais-produtivo-trello-SECNET-868x488-1.jpg"
-             width="200" height="200"/>
+             width="200" height="106"/>
       </a>
     </th>
     <th>Organizamos nossas tarefas através da plataforma Trello</th>
