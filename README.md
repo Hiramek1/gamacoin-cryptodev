@@ -116,8 +116,8 @@ npx hardhat test
   <tr>
     <th>
       <a href="https://code.visualstudio.com">
-        <img alt="Visual Studio Code - Code Editing. Redefined" src="https://wikiimg.tojsiabtv.com/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/150px-Visual_Studio_Code_1.35_icon.svg.png"
-             width="200" height="106"/>
+        <img alt="Visual Studio Code - Code Editing. Redefined" src="https://www.freecodecamp.org/news/content/images/size/w2000/2021/08/vscode.png"
+             width="200" height="90"/>
       </a>
     </th>
     <th>Precisamos do compilador Visual Studio Code para<br>
