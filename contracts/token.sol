@@ -40,7 +40,7 @@ contract Sollunah is IERC20 {
 
     //Mapping
     mapping(address => uint256) private addressToBalance;
-    mapping(address => mapping(address => uint)) public allowed;
+    mapping(address => mapping(address => uint)) private allowed;
 
     // Modifiers
     modifier isOwner() {
@@ -83,11 +83,10 @@ contract Sollunah is IERC20 {
     }
 
     function allowance(address tokenOwner, address spender) external override view returns (uint256){
-       return allowed[tokenOwner][spender];         
+       return allowed[tokenOwner][spender];
     }
 
-    function approve(address delegate, uint256 numTokens) external override
-isActive  returns (bool) {
+    function approve(address delegate, uint256 numTokens) external override isActive  returns (bool) {
         allowed[msg.sender][delegate] = numTokens;
         require(delegate != address(0), "Invalid wallet address");
         emit Approval(msg.sender, delegate, numTokens);
@@ -96,14 +95,13 @@ isActive  returns (bool) {
       
     function transferFrom(address from, address to, uint256 value) public override
   isActive returns(bool) {
-        require(allowed[from][to] >= value,"Amount to transfer exceeds the allowance");
-        require(addressToBalance[from] >= value,"Insuficient balance from address");
+        require(value <= allowed[from][msg.sender],"Amount to transfer exceeds the allowance");        require(addressToBalance[from] >= value,"Insuficient balance from address");
         require(from != address(0), "Invalid owner wallet address");
         require(to != address(0), "Invalid target wallet adress");
 
         addressToBalance[from] = addressToBalance[from].sub(value);
         addressToBalance[to] = addressToBalance[to].add(value);
-        allowed[from][to] = allowed[from][to].sub(value);
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(value);
         emit Transfer(from, to, value);
 
         return true;
