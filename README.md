@@ -36,14 +36,21 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 
 ## Instruções de Instalação e Utilização [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 
+###### Ambientes
+
+- O contrato de Tokens e o contrato da Máquina de Vendas poderão ser testados através da plataforma [Remix IDE](remix.ethereum.org)
+- Será possível importar os arquivos de [Token](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/token.sol) e [ExhangeMachine](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/ExchangeMachine.sol) através de seus links no botão "GitHub".
+- No menu à esquerda, procure pelo botão Deploy & run transactions. Primeiro seleciona o contrato da Sollunah para fazer Deploy e copie seu endereço de Deployed Contracts, logo abaixo. Em seguida, abra o arquivo ExchangeMachine.sol e ele irá aparecer nos contratos disponíveis para Deploy. Cole o endereço do contrato da Sollunah e faça Deploy deste também.
+- Utilize nossa documentação de [funcionalidades]() para entender como você pode navegar. Divirta-se!
+
+###### Testes
+- A execução dos testes deve ser feita num compilador como [VS Code](https://code.visualstudio.com)
+- Tenha em sua máquina a versão recomendada do [Node](https://nodejs.org/en/)
+- Através do prompt de comando, execute os comandos a seguir no diretório do projeto:
 ```shell
-npx hardhat accounts
+npm install
 npx hardhat compile
-npx hardhat clean
 npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
 ```
 
 ## Técnicas e Tecnologias Utilizadas [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
