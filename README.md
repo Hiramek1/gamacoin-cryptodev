@@ -39,8 +39,8 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 
 ###### Ambientes
 
-- O contrato de Tokens e o contrato da Máquina de Vendas poderão ser testados através da plataforma [Remix IDE](remix.ethereum.org)
-- Será possível importar os arquivos de [Token](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/token.sol) e [ExhangeMachine](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/ExchangeMachine.sol) através de seus links no botão "GitHub".
+- O contrato de Tokens e o contrato da Máquina de Vendas poderão ser testados através da plataforma [Remix IDE](https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null)
+- Será possível importar os arquivos de [Token](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/Sollunah.sol) e [ExhangeMachine](https://github.com/Hiramek1/sollunah-cryptodev/blob/main/contracts/ExchangeMachine.sol) através de seus links no botão "GitHub".
 - No menu à esquerda, procure pelo botão Deploy & run transactions. Primeiro selecione o contrato da Sollunah para fazer Deploy e copie seu endereço de Deployed Contracts, logo abaixo. Em seguida, abra o arquivo ExchangeMachine.sol e ele irá aparecer nos contratos disponíveis para Deploy. Cole o endereço do contrato da Sollunah e faça Deploy deste também.
 - Utilize nossa documentação de [funcionalidades](https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d) para entender como você pode navegar. Divirta-se!
 
@@ -92,7 +92,7 @@ npx hardhat test
   </tr>
   <tr>
     <th>
-      <a href="https://remix.ethereum.org">
+      <a href="https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null">
         <img alt="Remix - Ethereum IDE" src="https://i.imgur.com/Nq1ImZp.jpg"
              width="200" height="80"/>
       </a>
