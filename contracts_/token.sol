@@ -49,7 +49,7 @@ contract Sollunah is IERC20 {
     }
 
     modifier isActive() {
-        require(contractState == status.ACTIVE, "The contract is not active!");
+        require(contractState == status.ACTIVE, "The contract is not acvite!");
         _;
     }
 
@@ -74,7 +74,6 @@ contract Sollunah is IERC20 {
     }
 
     function transfer(address receiver, uint256 quantity) external override isActive returns(bool) {
-        require(address(receiver) != address(0), "Account address can not be 0");
         require(quantity <= addressToBalance[msg.sender], "Insufficient Balance to Transfer");
         addressToBalance[msg.sender] = addressToBalance[msg.sender].sub(quantity);
         addressToBalance[receiver] = addressToBalance[receiver].add(quantity);
@@ -88,8 +87,8 @@ contract Sollunah is IERC20 {
     }
 
     function approve(address delegate, uint256 numTokens) external override isActive  returns (bool) {
-        require(delegate != address(0), "Invalid wallet address");
         allowed[msg.sender][delegate] = numTokens;
+        require(delegate != address(0), "Invalid wallet address");
         emit Approval(msg.sender, delegate, numTokens);
         return true;
     }
@@ -109,7 +108,6 @@ contract Sollunah is IERC20 {
     }
 
     function toMint(uint256 amount) public isOwner isActive returns(bool) {
-        require(amount > 0, "Amount has to be greater than 0");
         totalsupply += amount;
         addressToBalance[msg.sender] = addressToBalance[msg.sender].add(amount);
         emit Minted(msg.sender, amount);
@@ -164,13 +162,6 @@ contract Sollunah is IERC20 {
         return address(this).balance;
     }
 
-    function changeOwner(address payable newOwnerContract) public isOwner returns (bool){
-        owner = newOwnerContract;
-        //emit OwnerChanged(owner, newOwnerContract);
-
-        return true;
-    }
-
     // Kill
     function kill() public isOwner {
         require(contractState == status.CANCELLED, "It's necessary to cancel the contract before to kill it!");
@@ -184,13 +175,13 @@ contract Sollunah is IERC20 {
 
 library Math {
 
-    function add(uint256 a, uint256 b) internal pure returns(uint256){
+    function add(uint256 a, uint256 b) public pure returns(uint256){
         uint256 c = a + b;
         assert(c >= a);
         return c;
     }
 
-    function sub(uint256 a, uint256 b) internal pure returns(uint256){
+    function sub(uint256 a, uint256 b) public pure returns(uint256){
         assert(b <= a);
         return a - b;
     }

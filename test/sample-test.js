@@ -2,7 +2,6 @@ const { expect, assert } = require("chai");
 const { ethers } = require("hardhat");
 const { it } = require("mocha");
 
-
 describe("Owner Permissions", () => {
 
   let owner, account1, account2, account3;
