@@ -30,7 +30,7 @@
 Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
 
 ## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
-<a href="https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d">
+<a href="https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d" target="_blank" rel="noopener noreferrer">
    <p align="center"> Confira o detalhamento completo de nossas funcionalidades no Notion! </p>
    <img src="https://i.imgur.com/ZxTLtpc.png"/>
 </a>
