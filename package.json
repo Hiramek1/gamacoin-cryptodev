@@ -7,5 +7,9 @@
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.9",
     "hardhat": "^2.9.9"
+  },
+  "dependencies": {
+    "big-number": "^2.0.0",
+    "util": "^0.12.4"
   }
 }
