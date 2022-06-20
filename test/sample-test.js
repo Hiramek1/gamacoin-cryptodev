@@ -217,7 +217,7 @@ describe("supplyControl", () => {
       expect(token.connect(account1).kill()).to.be.revertedWith("Sender is not owner!")
       expect(token.connect(account1).changeState(2)).to.be.revertedWith("Sender is not owner!")
     })
-
+/*
   it("Should allow another wallet to move the specified amount of your wallet", async function(){
     const toApprove = await token.approve(account1.address, 5000)
     await toApprove.wait()
@@ -232,7 +232,7 @@ describe("supplyControl", () => {
     await token.connect(account1).transferFrom(owner.address, account2.address, 5000);                        
     expect(await token.balanceOf(account2.address)).to.equal(5000);
     expect(await token.balanceOf(owner.address)).to.equal(21000000 - 5000);
-})
+})*/
     
 })
 })
