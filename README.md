@@ -49,13 +49,13 @@ Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e t
 - Tenha em sua máquina a versão recomendada do [Node](https://nodejs.org/en/)
 - Através do prompt de comando, execute os comandos a seguir no diretório do projeto:
 ```shell
-npm install hardhat
+npm install
 npx hardhat compile
 npx hardhat test
 ```
 - Caso você já tenha yarn global na máquina, modifique apenas o npm
 ```shell
-yarn install hardhat
+yarn install
 npx hardhat compile
 npx hardhat test
 ```
