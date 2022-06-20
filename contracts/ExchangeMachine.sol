@@ -78,7 +78,8 @@ contract ExchangeMachine  {
         require(amount <= balanceOf(msg.sender), "You dont have enough Sollunah to sell");
         uint amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
         require(getBalance() >= amountOfEthers, "Not enough Ethers in stock to complete this purchase");
-        require(Sollunah(tokenAddress).sell(address(this), amount, msg.sender) == true);
+        Sollunah(tokenAddress).approve(address(this),amount, msg.sender);
+        Sollunah(tokenAddress).transferFrom(msg.sender,address(this), amount);
         amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
         address payable to = payable(msg.sender);
         to.transfer(amountOfEthers);

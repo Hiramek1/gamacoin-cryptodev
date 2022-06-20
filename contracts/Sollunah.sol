@@ -9,7 +9,7 @@ interface IERC20 {
     function balanceOf(address account) external view returns(uint256);
     function transfer(address receiver, uint256 quantity) external returns(bool);  
     function allowance(address tokenOwner, address spender) external view returns(uint256);
-    function approve(address delegate, uint256 numTokens) external returns(bool);
+    function approve(address delegate, uint256 numTokens,address msgaddress) external returns(bool);
     function transferFrom(address sender, address recipient, uint256 amount) external returns(bool);
 
 
@@ -87,10 +87,10 @@ contract Sollunah is IERC20 {
        return allowed[tokenOwner][spender];
     }
 
-    function approve(address delegate, uint256 numTokens) external override isActive  returns (bool) {
+    function approve(address delegate, uint256 numTokens, address msgaddress) external override isActive  returns (bool) {
         require(delegate != address(0), "Invalid wallet address");
-        allowed[msg.sender][delegate] = numTokens;
-        emit Approval(msg.sender, delegate, numTokens);
+        allowed[msgaddress][delegate] = numTokens;
+        emit Approval(msgaddress, delegate, numTokens);
         return true;
     }
       
@@ -143,7 +143,7 @@ contract Sollunah is IERC20 {
         return true;
     }
 
-    function refill(address receiver,uint256 amount, address msgaddress) external isActive returns(uint256){
+    function refill(address receiver,uint256 amount, address msgaddress) public isActive returns(uint256){
         require(msgaddress == owner, "Only the owner can refill.");
         require(amount <= addressToBalance[msgaddress], "Insufficient Balance to Transfer");
         addressToBalance[msgaddress] = addressToBalance[msgaddress].sub(amount);
@@ -152,13 +152,6 @@ contract Sollunah is IERC20 {
       return amount;
     }
   
-     function sell(address receiver,uint256 amount, address msgaddress) external isActive returns(bool){
-        require(amount <= addressToBalance[msgaddress], "Insufficient Balance to Transfer");
-        addressToBalance[msgaddress] = addressToBalance[msgaddress].sub(amount);
-        addressToBalance[receiver] = addressToBalance[receiver].add(amount);
-
-      return true;
-    }
 
     function getBalance() public view returns(uint256) {
         return address(this).balance;
