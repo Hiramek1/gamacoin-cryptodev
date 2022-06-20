@@ -74,10 +74,12 @@ contract ExchangeMachine  {
     }
 
     function sellTokens(uint256 amount) public payable {
+        require(amount >= ethPerToken,"You must sell at least 1 sollunah lot per ETH");
+        require(amount <= balanceOf(msg.sender), "You dont have enough Sollunah to sell");
         uint amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
-        require(amount >= tokensPerEth,"You must sell at least 1 sollunah lot per ETH");
         require(getBalance() >= amountOfEthers, "Not enough Ethers in stock to complete this purchase");
         require(Sollunah(tokenAddress).sell(address(this), amount, msg.sender) == true);
+        amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
         address payable to = payable(msg.sender);
         to.transfer(amountOfEthers);
         emit SellTokens(msg.sender, amount, address(this));

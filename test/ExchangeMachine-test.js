@@ -189,11 +189,16 @@ describe("Sell Tokens", () => {
     
   })
 
+  it("Shouldn't Sell More Sollunah Tokens Than It Owns", async function() {
+
+    await expect(eMachine.sellTokens(210000001)).to.be.revertedWith("You dont have enough Sollunah to sell")
+    
+  })
 
 
   it("Shouldn't sell more Ethers than what is in stock", async function() {
 
-    await expect( eMachine.sellTokens(500)).to.be.revertedWith("Not enough Ethers in stock to complete this purchase")
+    await expect(eMachine.sellTokens(100)).to.be.revertedWith("Not enough Ethers in stock to complete this purchase")
 })
 
 
