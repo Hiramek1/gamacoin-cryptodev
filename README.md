@@ -27,7 +27,8 @@
 [Lorrana Filemes De Castro](https://github.com/Lofilemes)<br>
 
 ## Objetivo [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
-Construir um `Smart Contract` , utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso (você é livre para substitui-lás, mas fica por sua conta e risco, ok ?) e disponibiliza-las na rede `Ethereum`.
+Construir um `Smart Contract` de uma máquina de vendas, utilizando `Solidity` e todas as bibliotecas e tecnologias que aprendemos durante o curso.
+
 
 ## Funcionalidades [^](https://github.com/Hiramek1/sollunah-cryptodev#-sollunah-coin--web-30)
 <a href="https://ruby-root-490.notion.site/Sollunah-9a146cc9a47748bc939746726d46bb5d">
