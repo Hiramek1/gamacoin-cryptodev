@@ -14,8 +14,9 @@ contract ExchangeMachine  {
     event RefillT(address sender, uint256 amount, address contrato);
     event RefillE(address sender, uint256 amount);
     event Purchase(address sender, uint256 amountOfTokens, address contrato);
-    event SellTokens(address sender, uint256 amount, address contrato);
+    event SellTokens(address sender, uint256 amount, address contrato, uint256 ethers, uint256 pointFloat);
     event ChangeState(address sender, Status estado); //?
+    event OwnerChanged(address oldOwner, address newOwner);
     event ChangeTokensPerEth(address sender, uint256 tokensPerEth);
     event ChangeEthPerToken(address sender, uint256 ethPerToken);
     event WithdrawEthers(address sender, address receiver);
@@ -52,7 +53,8 @@ contract ExchangeMachine  {
     // Allow the owner to increase the smart contract's sollunah balance
     function refillTokens(uint256 amount) public isActived isOwner {
         require(amount >= tokensPerEth, "You must refill minimum tokens per ether amount");
-        Sollunah(tokenAddress).refill(address(this), amount, msg.sender);
+        require(Sollunah(tokenAddress).allowance(msg.sender,address(this)) > 0, "You must approve this contract to have access to your tokens");
+        Sollunah(tokenAddress).transferFrom(msg.sender,address(this), amount);
         emit RefillT(msg.sender, amount, address(this));
     }
 
@@ -64,7 +66,7 @@ contract ExchangeMachine  {
     }
 
     // Allow anyone to purchase sollunah
-    function purchase() public payable {
+    function purchase() public payable isActived {
         uint amountOfTokens = (msg.value/(10 ** 18)) * tokensPerEth;
         require(msg.value >= 1 ether, "You must pay at least 1 ETH per sollunah batch");
         require(balanceOf(address(this)) >= amountOfTokens, "Not enough sollunah in stock to complete this purchase");
@@ -73,20 +75,20 @@ contract ExchangeMachine  {
         emit Purchase(msg.sender, amountOfTokens,address(this));
     }
 
-    function sellTokens(uint256 amount) public payable {
+    function sellTokens(uint256 amount) public payable isActived {
         require(amount >= ethPerToken,"You must sell at least 1 sollunah lot per ETH");
         require(amount <= balanceOf(msg.sender), "You dont have enough Sollunah to sell");
+        require(Sollunah(tokenAddress).allowance(msg.sender,address(this)) > 0, "You must approve this contract to have access to your tokens");
         uint amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
         require(getBalance() >= amountOfEthers, "Not enough Ethers in stock to complete this purchase");
-        Sollunah(tokenAddress).approve(address(this),amount, msg.sender);
         Sollunah(tokenAddress).transferFrom(msg.sender,address(this), amount);
         amountOfEthers = (((amount/ethPerToken)*(10**18))/10)*9;
         address payable to = payable(msg.sender);
         to.transfer(amountOfEthers);
-        emit SellTokens(msg.sender, amount, address(this));
+        emit SellTokens(msg.sender, amount, address(this), amountOfEthers/(10**18), amountOfEthers % (10**18));
     }
 
-    function balanceOf(address tokenOwner) public view returns(uint256) {
+    function balanceOf(address tokenOwner) public view isActived returns(uint256) {
         uint256 TokenBalance = Sollunah(tokenAddress).balanceOf(address(tokenOwner));
         return TokenBalance;
 
@@ -113,18 +115,20 @@ contract ExchangeMachine  {
         return contractState;
     }
     
-    function changeTokensPerEth(uint256 newtokensPerEth) public isOwner returns(uint256){
+    function changeTokensPerEth(uint256 newtokensPerEth) public isActived isOwner returns(uint256){
+        require(newtokensPerEth <= ethPerToken, "For the security of the protocol, the repurchase value must be greater than the sale value.");
         require(newtokensPerEth != 0, "You must charge at least 1 token per ETH");
         tokensPerEth = newtokensPerEth;
         emit ChangeTokensPerEth(msg.sender, tokensPerEth);
         return newtokensPerEth;
     }
 
-    function changeEthPerToken(uint256 newEthPerToken) public isOwner returns(uint256){
-        require(newEthPerToken != 0, "You must charge at least 1 Ether per token");
-        ethPerToken = newEthPerToken;
+    function changeTokensSoldForEther(uint256 newAmountPerEther) public isActived isOwner returns(uint256){
+        require(newAmountPerEther >= tokensPerEth, "For the security of the protocol, the repurchase value must be greater than the sale value.");
+        require(newAmountPerEther != 0, "You must charge at least 1 Ether per token");
+        ethPerToken = newAmountPerEther;
         emit ChangeEthPerToken(msg.sender, ethPerToken);
-        return newEthPerToken;
+        return newAmountPerEther;
     }
 
     function getBalance() public view returns(uint256) {
@@ -145,7 +149,7 @@ contract ExchangeMachine  {
 
     function changeOwner(address payable newOwnerContract) public isOwner returns (bool){
         owner = newOwnerContract;
-        //emit OwnerChanged(owner, newOwnerContract);
+        emit OwnerChanged(owner, newOwnerContract);
 
         return true;
     }

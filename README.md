@@ -163,3 +163,23 @@ npx hardhat test
 10. ~~Não deve ser possivel vender tokens com valor zero.~~
 11. ~~Não deve ser possivel reabastecer a maquina com tokens com valor zero.~~
 12. ~~Não deve ser possivel reabastecer a maquina com ethers com valor zero.~~
+
+## Updates 26/06/2022
+
+1. Função SellTokens e Refill Tokens.
+  - Agora é necessário aprovar a movimentação dos tokens através da função "Aprove" do contrato Sollunah.
+    - A carteira interagindo com o contrato irá adicionar o contrato da máquina como "Delegate" e estipular a quantidade  de tokens que poderão ser movimentados.
+ 
+2. Setup de segurança de compra e venda de tokens por Ethers.
+  - Agora não é permitido estipular um valor menor de tokens necessários para vender por 1 ether do que o valor de tokens comprados por Ether, isso assegura a economia da máquina.
+ 
+3. Algumas funções foram definidas com o modificador isActived.
+  - Desta forma elas só poderão ser chamadas caso o status esteja definido como "ativo".
+  Obs. Apenas o dono do contrato pode modificar o status do mesmo.
+ 
+4. Inclusão do evento ChangeOwner e melhoria no SellTokens.
+  - Implantado o evento que mostra o antigo dono e o novo dono definido.
+      Obs. Apenas o dono do contrato pode alterar a posse para outro.
+  - A função SellTokens agora mostra a quantidade de Ethers paga pelo token com um segundo atributo para os decimais.
+    exp. Ether: 3  pointFloat: 75000000000000
+
